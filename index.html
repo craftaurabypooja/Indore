@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8b3f69">
+  <title>CraftAura by Pooja</title>
+  <meta name="description" content="Handmade handicraft products by CraftAura by Pooja.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" onclick="showHome(); return false;">
+        <img src="assets/logo.png" alt="CraftAura by Pooja">
+        <span>CraftAura <small>by Pooja</small></span>
+      </a>
+      <button class="cart-button" onclick="openCart()" aria-label="Open cart">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">HANDMADE • UNIQUE • LOVINGLY CRAFTED</p>
+          <h1>Little pieces of handmade joy.</h1>
+          <p>Explore handcrafted flowers, accessories, bouquets, home décor and more.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-wrap">
+          <span>🔍</span>
+          <input id="searchInput" type="search" placeholder="Search products..." oninput="renderProducts()">
+        </div>
+        <select id="categoryFilter" onchange="renderProducts()">
+          <option value="">All categories</option>
+        </select>
+      </div>
+
+      <div id="loading" class="state">Loading products...</div>
+      <div id="error" class="state error hidden"></div>
+      <section id="productGrid" class="product-grid"></section>
+    </section>
+
+    <section id="productView" class="page hidden"></section>
+    <section id="cartView" class="page hidden"></section>
+    <section id="checkoutView" class="page hidden"></section>
+    <section id="successView" class="page hidden"></section>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><img src="assets/logo.png" alt=""></div>
+    <strong>CraftAura by Pooja</strong>
+    <p>10, Parihar Market, Tejaji Nagar, Khandwa Road, Indore – 452020</p>
+    <p>📞 <a href="tel:+918517935887">8517935887</a></p>
+    <p class="copyright">© <span id="year"></span> CraftAura by Pooja</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
